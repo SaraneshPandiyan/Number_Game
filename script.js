@@ -1,5 +1,5 @@
 let secretNumber = Math.floor(Math.random() * 100) + 1;
-let lives = 10;
+let lives =10;
 
 const guessInput = document.getElementById('guess-input');
 const submitBtn = document.getElementById('submit-btn');

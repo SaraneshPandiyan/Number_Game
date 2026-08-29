@@ -6,8 +6,10 @@ const submitBtn = document.getElementById('submit-btn');
 const livesText = document.getElementById('lives-text');
 const message = document.getElementById('message');
 const playAgainBtn = document.getElementById('play-again-btn');
+
 submitBtn.addEventListener('click', handleGuess);
 playAgainBtn.addEventListener('click', resetGame);
+
 function handleGuess() {
   const guess = Number(guessInput.value);
   if (guess < 1 || guess > 100 || isNaN(guess)) {
@@ -37,3 +39,13 @@ function endGame() {
   playAgainBtn.style.display = "inline-block";
 }
 
+function resetGame() {
+  secretNumber = Math.floor(Math.random() * 100) + 1;
+  lives = 10;
+  guessInput.value = "";
+  guessInput.disabled = false;
+  submitBtn.disabled = false;
+  playAgainBtn.style.display = "none";
+  message.textContent = "";
+  livesText.textContent = "Lives: 10";
+}
